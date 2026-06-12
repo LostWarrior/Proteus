@@ -1,3 +1,7 @@
+from __future__ import annotations
+
+import argparse
+
 from proteus import __version__
 
 def build_parser() -> argparse.ArgumentParser:
@@ -17,7 +21,7 @@ def handle_doctor(args: argparse.Namespace) -> int:
         return 0
 
 def main() -> int:
-        parser = build.parser()
+        parser = build_parser()
         args = parser.parse_args()
         return args.handler(args)
 
